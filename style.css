@@ -1,0 +1,152 @@
+:root {
+--main-1: #f22f27;
+--main-2: #ff887a;
+--main-3: #cc1616;
+--main-4: #338eca;
+--main-5: #4c991b;
+}
+
+/* ----------各种样式---------- */
+.card {
+	font: 20px/30px serif,'Noto Serif CJK SC';
+}
+.title {
+font-size:12px;
+color:gray;
+float:right;
+height:20px;
+font-style:italic;
+}
+
+/*----------sspai style---------*/
+.h1 {
+  position: relative;
+  border: none;
+  font-size: 1em;
+  font-style: normal;
+  padding: 24px 16px 12px;
+  margin: 24px 0 36px;
+  line-height: 1.6;
+  text-indent: 0;
+}
+
+.h1 blockquote {
+  padding-right: 0;
+}
+
+.xleft:before,.yleft:before,.zleft:before {
+  content: '“';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  font-size: 2em;
+  font-family: Arial, serif;
+  line-height: 1em;
+  font-weight: 700;
+}
+.xleft:before{
+ color: var(--main-1);
+}
+.yleft:before{
+  color:var(--main-4);
+}
+.zleft:before{
+  color:var(--main-5);
+}
+
+
+/*---------------end----------------*/
+.xleft{
+    border-left: 2px solid var(--main-1);
+}
+.yleft{
+    border-left: 2px solid var(--main-4);
+}
+.zleft{
+    border-left: 2px solid var(--main-5);
+}
+.xxleft{
+    border-left: 2px solid var(--main-1);
+}
+
+#hhh,u {
+	color: var(--main-1);
+	#font-weight: bold;
+	border-bottom: 1px solid var(--main-1);
+	-webkit-animation: cloze 0.4s 0s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.mobile .h2{ overflow-x:auto; overflow-y:hidden;}
+
+
+#hh{
+color:rgba(0,0,0,0);
+border-bottom:1px solid var(--main-1);
+}
+
+/*-------- Table --------*/
+table {
+  border-collapse: collapse;
+  border-top: 1px solid #ccc;
+  width:100%;
+}
+table,th,tr,td{ 
+border-bottom:1px solid #ccc;
+/* 表格横线 */ 
+/*text-align: center; */
+padding:5px 0;
+}
+thead{
+  text-align:justify;/*表头两端对齐*/
+}
+
+#time { font-family: serif; float: right; } 
+
+/* ---------- 其他调整 ---------- */
+.xleft a {  color: var(--main-1);}
+.yleft a {  color: var(--main-4);}
+.zleft a {  color: var(--main-5);}
+
+img { max-width: 100%; vertical-align: middle; }
+	.chrome img { max-width: 100%; vertical-align: middle; }
+ul,ol { margin-top: 0em; }
+li { margin-left: -0.5em; }
+i { font-family: palatino; padding: 0 3px 0 0; }
+u { text-decoration: none; }
+uu { border-bottom: 1px solid #ec6c4f; }
+hr { height: 1px; width: 100%; display: block; border: 0px solid #fff; vertical-align: middle; margin:10px 0px 10px 0px; }
+.xleft hr { background-color: var(--main-1);}
+.yleft hr { background-color: var(--main-4);}
+.zleft hr { background-color: var(--main-5);}
+
+/* ----------夜间模式（Android）---------- */
+
+body.night_mode { background-color: black; color:white; }
+.night_mode .card { background-color: black;  color:white; }
+.night_mode img { opacity:0.9;  filter:invert;}
+
+/* ----------动画效果---------- */
+
+.slide { position: relative; -webkit-animation: slide 1s 0s; -webkit-animation-fill-mode: forwards; }
+
+@-webkit-keyframes slide {
+	0%	{ opacity: 0  ; top: 100px; }
+	50%	{ opacity: 0.8; top: -10px; }
+	100%	{ opacity: 1.0; top: -3px; }
+}
+
+@-webkit-keyframes cloze {
+	from	{ opacity: 0; }
+	to  	{ opacity: 1; }
+}
+
+/*词性高亮*/
+.hightlight{
+  font-size     : 16px;   /*字体大小-12px*/
+  border-radius : 4px;    /*圆角幅度-4px*/ 
+  color         : #fff;   /*字体颜色-白色*/
+  padding       : 0 3px;  /*左右留白-3px*/
+  margin-right  : 5px;    /*右侧间隔-5px*/
+  font-style:italic;
+}

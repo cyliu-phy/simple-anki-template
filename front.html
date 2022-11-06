@@ -1,0 +1,96 @@
+{{#《》}}<div class = "title"> {{《》}}&nbsp; {{Page}}</div>{{/《》}}
+<div class="h1 xleft">
+	<div class="h2" >{{Question}}</div>
+</div>
+	
+
+<!-- KaTeX -->
+ <link rel="stylesheet" href="katex/katex.min.css"> 
+<script defer src="katex/katex.min.js"></script> 
+<script defer src="katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+
+<!-- underline cloze -->
+<script>
+  [].forEach.call(document.querySelectorAll('.h1'),
+       function(V0) {
+          V0.innerHTML = V0.innerHTML.replace(/<u>([\s\S]*?)<\/u>/g,'<span id="hh" onclick="toggle(this)" wor="wor2">'+"$1"+'</span>');
+ });
+/////////
+  function toggle(id) {
+
+       if (id.getAttribute('wor')=="wor2") {
+    	 
+                   id.setAttribute('wor',"wor1");
+                   id.style.color="#f22f27";
+
+                  return;}
+
+        if (id.getAttribute('wor')=="wor1"){
+
+           id.setAttribute('wor',"wor2");
+           id.style.color="rgba(0,0,0,0)";
+
+          return;}}
+
+</script>
+
+<!-- 词性高亮 -->
+<script type="text/javascript">
+var colorMap = {
+    'n.':'#e3412f',
+    'm.':'#e3412f',
+    'f.':'#e3412f',
+    'a.':'#f8b002',
+    'adj.':'#f8b002',
+    'ad.':'#684b9d',
+    'adv.':'#684b9d',
+    'v.':'#539007',
+    'vi.':'#539007',
+    'vt.':'#539007',
+    'prep.':'#04B7C9',
+    'conj.':'#04B7C9',
+    'pron.':'#04B7C9',
+    'art.':'#04B7C9',
+    'num.':'#04B7C9',
+    'int.':'#04B7C9',
+    'interj.':'#04B7C9',
+    'modal.':'#04B7C9',
+    'aux.':'#04B7C9',
+    'pl.':'#D111D3',
+    'abbr.':'#D111D3',
+  };
+  [].forEach.call(document.querySelectorAll('.h1,.h2'), function(div) {
+  div.innerHTML = div.innerHTML
+  .replace(/\b[a-z]+\./g, function(symbol) {
+    if(colorMap[symbol]) {
+      return '<span class="hightlight" style="background-color:' 
+              + colorMap[symbol] + ';" >'+ symbol + '</span>';
+    }else{
+      return symbol;
+    }
+  });
+ });
+
+</script>
+
+
+<!--code highlight-->
+<script>
+[].forEach.call(document.querySelectorAll('.h1'),
+    function(V1) {
+        let str = V1.innerHTML;
+        const re = /```(.*?)(<br>|\s)+([\s\S]*?)(<br>|n)```/g;
+        str = str.replace(re,function(a,b,c,d){
+                d = d.replaceAll("<br>","\n");
+                new_str = '<pre class="line-numbers"><code class="lang-'+b+'">'+d+'</code></pre>';
+                return new_str;
+
+})
+        V1.innerHTML = str;
+ });
+</script>
+
+
+<link href="prism.css" rel="stylesheet" />
+<script src="prism.js"></script>

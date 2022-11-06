@@ -22,7 +22,7 @@ True
 1. release界面下载最新的文件，找到apkg文件，电脑上选择用Anki打开，AnkiDroid上点击右上角三个点，选择导入，导入apkg文件，在文件管理里找到下载的模板即可
 2. 下载 media.7z 文件，解压到媒体文件夹，安卓上是`AnkiDroid/collection.media`
 3. 点击加号，添加卡片，类型里选择Basic(Advanced)，在各个字段添加需要的内容即可，其中只有第一个字段必填，其他字段不填相应部分不会显示。
-<img src="https://s1.ax1x.com/2022/11/05/xOQiQJ.png" width="50%">
-<img src="https://s1.ax1x.com/2022/11/05/xOQkLR.png" width="50%">
-<img src="https://s1.ax1x.com/2022/11/05/xOQEe1.png" width="50%">
-<img src="https://s1.ax1x.com/2022/11/05/xOQVdx.png" width="50%">
+![](https://s1.ax1x.com/2022/11/05/xOQiQJ.png)
+![](https://s1.ax1x.com/2022/11/05/xOQkLR.png)
+![](https://s1.ax1x.com/2022/11/05/xOQEe1.png)
+![](https://s1.ax1x.com/2022/11/05/xOQVdx.png)
