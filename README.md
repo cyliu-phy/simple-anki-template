@@ -35,7 +35,7 @@ True
 </details>
 
 ## 使用Material-Reviewer教程
-因为AnkiDroid自带的Appbar和Review button在平板上占的空间太大，而且颜色和模板背景颜色不和谐，一直打算自己做一个，好在Anki在去年就开放了[JavaScript API](https://github.com/ankidroid/Anki-Android/wiki/AnkiDroid-Javascript-API)为模板创作增加了更多的可能性，看了看给的实例代码，发现已经有人做过了，https://github.com/krmanik/ankidroid-js-addon/tree/main/Reviewer%20addons/ankidroid-js-addon-material-reviewer/package ，那么就可以直接拿来用，首先，下载`index.js`和`Material-Icons.woff2`这两个文件，然后把index.js里面
+因为AnkiDroid自带的Appbar和Answer button在平板上占的空间太大，而且颜色和模板背景颜色不和谐，一直打算自己做一个，好在Anki在去年就开放了[JavaScript API](https://github.com/ankidroid/Anki-Android/wiki/AnkiDroid-Javascript-API)为模板创作增加了更多的可能性，看了看给的实例代码，发现已经有人做过了，https://github.com/krmanik/ankidroid-js-addon/tree/main/Reviewer%20addons/ankidroid-js-addon-material-reviewer/package ，那么就可以直接拿来用，首先，下载`index.js`和`Material-Icons.woff2`这两个文件，然后把index.js里面
 ```js
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(../addons/ankidroid-js-addon-material-reviewer/package/Material-Icons.woff2);
 ```
@@ -47,7 +47,9 @@ True
 ```html
 <script src="index.js"></script>
 ```
-即可
+
+设置里`Apperance->Fullscreen mode->Hide the system bars and answer buttons`打开，把AnkiDroid自带的Appbar和Answer button隐藏掉。
+
 ![](https://s1.ax1x.com/2023/05/02/p9GGfyT.jpg)
 
 ## 换字体教程
