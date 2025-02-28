@@ -69,7 +69,7 @@ font-style:italic;
     border-left: 2px solid var(--main-1);
 }
 
-#hhh,u {
+#cloze-back,u {
 	color: var(--main-1);
 	#font-weight: bold;
 	border-bottom: 1px solid var(--main-1);
@@ -80,7 +80,7 @@ font-style:italic;
 .mobile .h2{ overflow-x:auto; overflow-y:hidden;}
 
 
-#hh{
+#cloze-front {
 color:rgba(0,0,0,0);
 border-bottom:1px solid var(--main-1);
 }
@@ -128,25 +128,18 @@ body.night_mode { background-color: black; color:white; }
 
 /* ----------动画效果---------- */
 
-.slide { position: relative; -webkit-animation: slide 1s 0s; -webkit-animation-fill-mode: forwards; }
+/* Animations */
+.slide {
+  position: relative;
+  animation: slide 1s forwards;
+}
 
-@-webkit-keyframes slide {
-	0%	{ opacity: 0  ; top: 100px; }
-	50%	{ opacity: 0.8; top: -10px; }
-	100%	{ opacity: 1.0; top: -3px; }
+@keyframes slide {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @-webkit-keyframes cloze {
 	from	{ opacity: 0; }
 	to  	{ opacity: 1; }
-}
-
-/*词性高亮*/
-.hightlight{
-  font-size     : 16px;   /*字体大小-12px*/
-  border-radius : 4px;    /*圆角幅度-4px*/ 
-  color         : #fff;   /*字体颜色-白色*/
-  padding       : 0 3px;  /*左右留白-3px*/
-  margin-right  : 5px;    /*右侧间隔-5px*/
-  font-style:italic;
 }
