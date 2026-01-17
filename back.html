@@ -35,10 +35,10 @@
     el.innerHTML = el.innerHTML.replace(/<u>([\s\S]*?)<\/u>/g, '<span id="cloze-back" onclick="toggleCloze(this)">$1</span>');
   });
 
-  // Toggle cloze visibility
+  // Toggle cloze visibility (using cognitive-ease optimized warm color)
   function toggleCloze(el) {
     const isVisible = el.style.color === 'rgba(0, 0, 0, 0)';
-    el.style.color = isVisible ? '#f22f27' : 'rgba(0, 0, 0, 0)';
+    el.style.color = isVisible ? '#c45c3e' : 'rgba(0, 0, 0, 0)';
   }
 </script>
 

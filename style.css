@@ -1,145 +1,271 @@
 :root {
---main-1: #f22f27;
---main-2: #ff887a;
---main-3: #cc1616;
---main-4: #338eca;
---main-5: #4c991b;
+  /* Cognitive Ease Optimized Palette
+     - Softer tones reduce eye strain and cognitive load
+     - Warm undertones create familiarity and comfort
+     - Sufficient contrast for legibility without harshness */
+  --main-1: #2d5a7b;      /* Calm blue - primary answers */
+  --main-1-soft: #e8f0f5; /* Light tint for backgrounds */
+  --main-2: #5a8fa8;      /* Medium blue */
+  --main-3: #1e4260;      /* Dark blue for emphasis */
+  --main-4: #4a7c59;      /* Muted green - notes */
+  --main-4-soft: #e8f2ea; /* Light green tint */
+  --main-5: #7a6b5a;      /* Warm brown - extensions */
+  --main-5-soft: #f2efe8; /* Light warm tint */
+  --text-primary: #2c3e50;     /* Softer than pure black */
+  --text-secondary: #5a6c7d;   /* For less important text */
+  --cloze-color: #c45c3e;      /* Warm terracotta for cloze */
+  --cloze-bg: #fdf6f3;         /* Subtle highlight */
 }
 
-/* ----------各种样式---------- */
+/* ---------- Base Styles (Cognitive Ease Optimized) ---------- */
 .card {
-	font: 20px/30px serif,'Noto Serif CJK SC';
-}
-.title {
-font-size:12px;
-color:gray;
-float:right;
-height:20px;
-font-style:italic;
+  /* Slightly larger base font for easier reading */
+  font: 21px/1.75 serif, 'Noto Serif CJK SC';
+  color: var(--text-primary);
+  /* Subtle letter-spacing improves word recognition */
+  letter-spacing: 0.01em;
+  /* Smooth text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/*----------sspai style---------*/
+.title {
+  font-size: 12px;
+  color: var(--text-secondary);
+  float: right;
+  height: 20px;
+  font-style: italic;
+  /* Reduced visual weight - less distraction from content */
+  opacity: 0.7;
+}
+
+/* ---------- Content Sections (Cognitive Ease: Chunking & Spacing) ---------- */
 .h1 {
   position: relative;
   border: none;
   font-size: 1em;
   font-style: normal;
-  padding: 24px 16px 12px;
-  margin: 24px 0 36px;
-  line-height: 1.6;
+  /* Increased padding for visual breathing room */
+  padding: 20px 24px 16px;
+  margin: 16px 0 24px;
+  line-height: 1.75;
   text-indent: 0;
+  /* Subtle rounded corners feel more approachable */
+  border-radius: 4px;
 }
 
 .h1 blockquote {
   padding-right: 0;
+  border-left: 3px solid var(--main-2);
+  margin: 12px 0;
+  padding-left: 16px;
+  color: var(--text-secondary);
 }
 
-.xleft:before,.yleft:before,.zleft:before {
-  content: '“';
-  position: absolute;
-  left: 12px;
-  top: 0;
-  font-size: 2em;
-  font-family: Arial, serif;
-  line-height: 1em;
-  font-weight: 700;
-}
-.xleft:before{
- color: var(--main-1);
-}
-.yleft:before{
-  color:var(--main-4);
-}
-.zleft:before{
-  color:var(--main-5);
-}
+/* Removed decorative quote marks - they add visual noise without aiding memory
+   Kahneman: "Cognitive ease makes information feel more familiar and true"
+   Simpler = easier to process = better retention */
 
 
-/*---------------end----------------*/
-.xleft{
-    border-left: 2px solid var(--main-1);
-}
-.yleft{
-    border-left: 2px solid var(--main-4);
-}
-.zleft{
-    border-left: 2px solid var(--main-5);
-}
-.xxleft{
-    border-left: 2px solid var(--main-1);
+/* ---------- Section Styles (Cognitive Ease: Visual Chunking) ----------
+   Subtle background tints help the brain recognize distinct information chunks
+   without creating harsh visual boundaries */
+
+.xleft {
+  border-left: 3px solid var(--main-1);
+  background: linear-gradient(to right, var(--main-1-soft) 0%, transparent 100%);
 }
 
-#cloze-back,u {
-	color: var(--main-1);
-	#font-weight: bold;
-	border-bottom: 1px solid var(--main-1);
-	-webkit-animation: cloze 0.4s 0s;
-	-webkit-animation-fill-mode: forwards;
+.yleft {
+  border-left: 3px solid var(--main-4);
+  background: linear-gradient(to right, var(--main-4-soft) 0%, transparent 100%);
 }
 
-.mobile .h2{ overflow-x:auto; overflow-y:hidden;}
+.zleft {
+  border-left: 3px solid var(--main-5);
+  background: linear-gradient(to right, var(--main-5-soft) 0%, transparent 100%);
+}
 
+.xxleft {
+  border-left: 3px solid var(--main-1);
+  background: linear-gradient(to right, var(--main-1-soft) 0%, transparent 100%);
+}
+
+/* ---------- Cloze Deletion Styling (Cognitive Ease: Attention Focus) ----------
+   Warm terracotta color draws attention without harsh contrast
+   Subtle background helps locate cloze deletions at a glance */
+
+#cloze-back, u {
+  color: var(--cloze-color);
+  border-bottom: 2px solid var(--cloze-color);
+  background-color: var(--cloze-bg);
+  padding: 0 4px;
+  border-radius: 2px;
+  animation: cloze-reveal 0.3s ease-out;
+}
+
+.mobile .h2 {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
 #cloze-front {
-color:rgba(0,0,0,0);
-border-bottom:1px solid var(--main-1);
+  color: rgba(0, 0, 0, 0);
+  border-bottom: 2px dashed var(--cloze-color);
+  background-color: var(--cloze-bg);
+  padding: 0 4px;
+  border-radius: 2px;
+  cursor: pointer;
+  /* Hint that this is interactive */
+  transition: background-color 0.2s ease;
 }
 
-/*-------- Table --------*/
+#cloze-front:hover {
+  background-color: #f5ebe6;
+}
+
+/* ---------- Table Styling ---------- */
 table {
   border-collapse: collapse;
-  border-top: 1px solid #ccc;
-  width:100%;
-}
-table,th,tr,td{ 
-border-bottom:1px solid #ccc;
-/* 表格横线 */ 
-/*text-align: center; */
-padding:5px 0;
-}
-thead{
-  text-align:justify;/*表头两端对齐*/
+  border-top: 1px solid #ddd;
+  width: 100%;
+  margin: 12px 0;
 }
 
-#time { font-family: serif; float: right; } 
+table, th, tr, td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px 12px;
+}
 
-/* ---------- 其他调整 ---------- */
-.xleft a {  color: var(--main-1);}
-.yleft a {  color: var(--main-4);}
-.zleft a {  color: var(--main-5);}
+th {
+  background-color: #f8f9fa;
+  color: var(--text-primary);
+  font-weight: 600;
+}
 
-img { max-width: 100%; vertical-align: middle; }
-	.chrome img { max-width: 100%; vertical-align: middle; }
-ul,ol { margin-top: 0em; }
-li { margin-left: -0.5em; }
-i { font-family: palatino; padding: 0 3px 0 0; }
-u { text-decoration: none; }
-uu { border-bottom: 1px solid #ec6c4f; }
-hr { height: 1px; width: 100%; display: block; border: 0px solid #fff; vertical-align: middle; margin:10px 0px 10px 0px; }
-.xleft hr { background-color: var(--main-1);}
-.yleft hr { background-color: var(--main-4);}
-.zleft hr { background-color: var(--main-5);}
+thead {
+  text-align: left;
+}
 
-/* ----------夜间模式（Android）---------- */
+#time {
+  font-family: serif;
+  float: right;
+  color: var(--text-secondary);
+}
 
-body.night_mode { background-color: black; color:white; }
-.night_mode .card { background-color: black;  color:white; }
-.night_mode img { opacity:0.9;  filter:invert;}
+/* ---------- Links (Cognitive Ease: Consistent Visual Language) ---------- */
+.xleft a { color: var(--main-1); text-decoration: none; border-bottom: 1px dotted var(--main-1); }
+.yleft a { color: var(--main-4); text-decoration: none; border-bottom: 1px dotted var(--main-4); }
+.zleft a { color: var(--main-5); text-decoration: none; border-bottom: 1px dotted var(--main-5); }
+a:hover { opacity: 0.8; }
 
-/* ----------动画效果---------- */
+/* ---------- Media & Lists ---------- */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-radius: 4px;
+  margin: 8px 0;
+}
 
-/* Animations */
+.chrome img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+ul, ol {
+  margin-top: 0.5em;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+i {
+  font-family: palatino;
+  padding: 0 3px 0 0;
+}
+
+u {
+  text-decoration: none;
+}
+
+uu {
+  border-bottom: 1px solid var(--cloze-color);
+}
+
+/* ---------- Horizontal Rules (Section Dividers) ---------- */
+hr {
+  height: 2px;
+  width: 100%;
+  display: block;
+  border: none;
+  margin: 16px 0;
+  opacity: 0.4;
+}
+
+.xleft hr { background-color: var(--main-1); }
+.yleft hr { background-color: var(--main-4); }
+.zleft hr { background-color: var(--main-5); }
+
+/* ---------- Night Mode (Android) ---------- */
+body.night_mode {
+  background-color: #1a1a2e;
+  color: #e8e8e8;
+}
+
+.night_mode .card {
+  background-color: #1a1a2e;
+  color: #e8e8e8;
+}
+
+.night_mode img {
+  opacity: 0.85;
+}
+
+.night_mode .xleft,
+.night_mode .yleft,
+.night_mode .zleft,
+.night_mode .xxleft {
+  background: none;
+}
+
+.night_mode #cloze-front,
+.night_mode #cloze-back {
+  background-color: rgba(196, 92, 62, 0.2);
+}
+
+/* ---------- Animations (Cognitive Ease: Minimal Distraction) ----------
+   Fast animations (0.3-0.4s) provide feedback without delaying comprehension
+   Kahneman: Processing fluency is key - delays create cognitive friction */
+
 .slide {
   position: relative;
-  animation: slide 1s forwards;
+  animation: slide 0.35s ease-out forwards;
 }
 
 @keyframes slide {
-  0% { opacity: 0; transform: translateY(50px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@-webkit-keyframes cloze {
-	from	{ opacity: 0; }
-	to  	{ opacity: 1; }
+@keyframes cloze-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    animation: none;
+  }
+  #cloze-back, u {
+    animation: none;
+  }
 }

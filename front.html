@@ -20,15 +20,15 @@
     );
   });
 
-  // Toggle cloze visibility
+  // Toggle cloze visibility (using cognitive-ease optimized warm color)
   function toggleCloze(el) {
     const isVisible = el.style.color === 'rgba(0, 0, 0, 0)';
-    el.style.color = isVisible ? '#f22f27' : 'rgba(0, 0, 0, 0)';
+    el.style.color = isVisible ? '#c45c3e' : 'rgba(0, 0, 0, 0)';
   }
 
   // Initialize cloze spans to ensure proper behavior on first click
   document.querySelectorAll('#cloze-front').forEach(el => {
-    el.style.color = 'rgba(0, 0, 0, 0)'; // Set initial state to hidden
+    el.style.color = 'rgba(0, 0, 0, 0)';
   });
 </script>
 
